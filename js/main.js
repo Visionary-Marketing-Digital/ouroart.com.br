@@ -301,6 +301,46 @@
 		});
 	});
 
+	//reprodução de video e thumbmail
+	const container = document.getElementById("video-container");
+	const thumbnailHTML = `
+	<div class="icon mb-4 d-flex align-items-center justify-content-center">
+		<span class="icon-play"></span>
+	</div>
+	`;
+
+	container.addEventListener("click", function() {
+	// Cria o vídeo somente se não tiver
+	if(!this.querySelector("video")) {
+		const video = document.createElement("video");
+		video.controls = true;
+		video.autoplay = true;
+		video.style.width = "100%";
+		video.style.height = "400px";
+		video.style.borderRadius = "8px";
+		video.innerHTML = `<source src="https://ik.imagekit.io/9f7b2kja5/OuroArt/videos/Independ%C3%AAncia%20financeira.mp4?updatedAt=1759155544075" type="video/mp4">`;
+
+		this.innerHTML = "";
+		this.appendChild(video);
+		this.style.backgroundImage = "none";
+
+		// Intersection Observer para pausar e resetar
+		const observer = new IntersectionObserver(entries => {
+		entries.forEach(entry => {
+			if(!entry.isIntersecting) {
+			// Pausa o vídeo
+			video.pause();
+			// Reseta o container para thumbnail + play
+			container.innerHTML = thumbnailHTML;
+			container.style.backgroundImage = "url(images/thumbnail.png)";
+			}
+		});
+		}, { threshold: 0.25 });
+
+		observer.observe(video);
+	}
+	});
+
 
 })(jQuery);
 
