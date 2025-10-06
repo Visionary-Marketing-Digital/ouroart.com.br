@@ -8636,7 +8636,7 @@ textarea.form-control {
   color: black;
   background-color: var(--background-color);
   font-size: 14px;
-  padding-bottom: 50px;
+  padding-bottom: 10px;
   position: relative;
 }
 
