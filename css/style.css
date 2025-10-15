@@ -67,6 +67,10 @@ body {
 [tabindex="-1"]:focus {
   outline: 0 !important; }
 
+html, body {
+  overflow-x: hidden;
+}
+
 .shadow-custom {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* horizontal, vertical, blur, cor */
   border-radius: 8px; /* opcional: deixa os cantos levemente arredondados */
