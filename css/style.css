@@ -9610,3 +9610,10 @@ cursor: pointer;
   color: white;
   opacity: 0.9;
 }
+
+.no-click {
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none; /* opcional, remove sublinhado */
+  color: inherit;        /* opcional, mantém a cor do texto */
+}
