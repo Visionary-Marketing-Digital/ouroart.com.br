@@ -3206,6 +3206,16 @@ input[type="button"].btn-block {
   .nav-link.disabled {
     color: #6c757d; }
 
+.btn-nav{
+  background-color: #c49b63;
+  color: white !important;
+}
+
+.btn-nav:hover{
+  color: #c49b63 !important;
+  background-color: #ffffff;
+}
+
 .nav-tabs {
   border-bottom: 1px solid #dee2e6; }
   .nav-tabs .nav-item {
