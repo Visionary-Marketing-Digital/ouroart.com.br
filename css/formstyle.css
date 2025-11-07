@@ -1,0 +1,225 @@
+/* ======== SEÇÃO GERAL ======== */
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+section#form-revendedora {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 80px 20px; /* margem top e bottom */
+}
+
+/* ======== CARD DO FORM ======== */
+.card-form-ouroart {
+  background-color: #464646;
+  border-radius: 20px;
+  padding: 50px 60px;
+  max-width: 750px;
+  width: 100%;
+  box-shadow: 0 0 25px rgba(182, 134, 60, 0.15); /* dourado suave */
+  color: #000000;
+}
+
+/* ======== TÍTULOS ======== */
+.card-form-ouroart h3 {
+  text-align: center;
+  font-size: 28px;
+  color: #b6863c;
+  margin-bottom: 10px;
+}
+
+.card-form-ouroart p {
+  text-align: center;
+  color: #ccc;
+  margin-bottom: 35px;
+}
+
+/* ======== INPUTS ======== */
+.input-group-ouroart {
+  position: relative;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrapper i {
+  position: absolute;
+  left: 15px;
+  color: #b6863c;
+  font-size: 18px;
+  pointer-events: none;
+}
+
+.input-wrapper .input-ouroart {
+  width: 100%;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 12px 15px 12px 45px; /* espaço pro ícone */
+  color: #fff;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.input-group-ouroart i {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%); /* centraliza verticalmente */
+  color: #b6863c;
+  font-size: 18px;
+  pointer-events: none; /* não interfere no clique */
+}
+
+.input-group-ouroart .input-label {
+  display: block;
+  margin-bottom: 6px;
+  color: #ddd;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.input-ouroart {
+  width: 100%;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 12px 15px 12px 45px; /* espaço pro ícone */
+  color: #fff;
+  font-size: 15px;
+  transition: 0.3s;
+  line-height: normal;
+}
+
+.input-ouroart:focus {
+  border-color: #b6863c;
+  outline: none;
+}
+
+/* ======== BOTÕES DE GÊNERO ======== */
+.gender-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* Esconde completamente os radios padrão */
+.gender-buttons input[type="radio"] {
+  display: none;
+}
+
+.gender-btn {
+  flex: 1;
+  text-align: center;
+  padding: 12px 0;
+  border: 2px solid #333;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  background-color: #1a1a1a;
+  color: #ccc;
+  font-weight: 500;
+  user-select: none;
+}
+
+.gender-btn:hover {
+  border-color: #b6863c;
+  color: #fff;
+}
+
+.gender-buttons input[type="radio"]:checked + .gender-btn {
+  background-color: #b6863c;
+  border-color: #b6863c;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ======== ERROS ======== */
+.error-message {
+  display: none;
+  color: #ff5e5e;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.error-message.visible {
+  display: block;
+  color: #ff5e5e;
+  font-size: 13px;
+  margin-top: 6px;
+  animation: fadeIn 0.3s ease;
+}
+
+/* ======== BOTÕES ======== */
+.btn-ouroart {
+  background-color: #b6863c;
+  border: none;
+  border-radius: 10px;
+  color: #000;
+  font-weight: 600;
+  padding: 12px 35px;
+  transition: 0.3s ease;
+}
+
+.btn-ouroart:hover {
+  background-color: #d4a24f;
+  transform: scale(1.02);
+}
+
+/* ======== INDICADOR DE ETAPA ======== */
+.step-indicator {
+  text-align: center;
+  color: #b6863c;
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+#prevBtn {
+  background: transparent;
+  color: #b6863c;
+  border: 2px solid #b6863c;
+    
+}
+
+#prevBtn.visible {
+  display: inline-block; /* aparece nas próximas etapas */
+}
+
+#nextBtn {
+  background: #b6863c;
+  color: #000;
+  font-weight: 600;
+}
+
+.steps-controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+
+
+/* ======== ANIMAÇÃO DE ERRO ======== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
