@@ -17,13 +17,14 @@ section#form-revendedora {
 
 /* ======== CARD DO FORM ======== */
 .card-form-ouroart {
-  background-color: #464646;
+  background-color: #f5f5f5;
   border-radius: 20px;
   padding: 50px 60px;
   max-width: 750px;
   width: 100%;
   box-shadow: 0 0 25px rgba(182, 134, 60, 0.15); /* dourado suave */
-  color: #000000;
+  color: #2b2a2a;
+  font-weight: 500;
 }
 
 /* ======== TÍTULOS ======== */
@@ -64,8 +65,8 @@ section#form-revendedora {
 
 .input-wrapper .input-ouroart {
   width: 100%;
-  background: #1a1a1a;
-  border: 1px solid #333;
+  background: #ececec;
+  border: 1px solid #bebebe;
   border-radius: 8px;
   padding: 12px 15px 12px 45px; /* espaço pro ícone */
   color: #fff;
@@ -86,26 +87,81 @@ section#form-revendedora {
 .input-group-ouroart .input-label {
   display: block;
   margin-bottom: 6px;
-  color: #ddd;
+  color: #2b2a2a;
   font-weight: 500;
   font-size: 15px;
 }
 
 .input-ouroart {
   width: 100%;
-  background: #1a1a1a;
-  border: 1px solid #333;
+  background: #ececec;
+  border: 1px solid #bebebe;
   border-radius: 8px;
   padding: 12px 15px 12px 45px; /* espaço pro ícone */
-  color: #fff;
+  color: #000000;
   font-size: 15px;
   transition: 0.3s;
   line-height: normal;
 }
 
+.input-wrapper select.input-ouroart {
+  color: #000 !important; /* texto preto */
+  -webkit-text-fill-color: #000 !important; /* para Chrome/Safari */
+  background-color: #fff; /* fundo branco */
+  height: 45px; /* altura igual aos inputs */
+  line-height: 45px;
+  border-radius: 5px;
+  font-size: 15px;
+  padding-left: 45px; /* espaço pro ícone */
+  padding-right: 35px; /* espaço pra seta dourada */
+}
+
+.input-wrapper select.input-ouroart {
+  line-height: normal;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 .input-ouroart:focus {
   border-color: #b6863c;
   outline: none;
+}
+
+.msg-info-input{
+  text-align: left !important;
+  color: rgb(75, 75, 75) !important;
+  font-size: 11px;
+  margin-bottom: 0 !important;
+}
+
+/* Estado válido (campo preenchido corretamente) */
+.input-ouroart.valid {
+  border-color: #00461d; /* verde */
+}
+
+/* Estado inválido (campo deixado vazio após interação) */
+.input-ouroart.invalid {
+  border-color: #c90d1c; /* vermelho */
+}
+
+/* Cor padrão (antes de selecionar a data) */
+input[type="date"] {
+  color: #818181;
+  -webkit-text-fill-color: #818181;
+}
+
+/* Quando o usuário escolhe uma data */
+input[type="date"]:valid {
+  color: #000;
+  -webkit-text-fill-color: #000;
+}
+
+/* Corrige cor do texto quando o valor é inserido automaticamente (ex: via JS ou autocomplete) */
+input,
+input:-webkit-autofill {
+  -webkit-text-fill-color: #000 !important; /* texto preto */
+  color: #000 !important; /* fallback */
+  transition: background-color 5000s ease-in-out 0s; /* evita fundo amarelo no autofill */
 }
 
 /* ======== BOTÕES DE GÊNERO ======== */
@@ -123,19 +179,18 @@ section#form-revendedora {
   flex: 1;
   text-align: center;
   padding: 12px 0;
-  border: 2px solid #333;
+  border: 2px solid #b6863c;
   border-radius: 10px;
   cursor: pointer;
   transition: 0.3s;
-  background-color: #1a1a1a;
-  color: #ccc;
+  background-color: #ffffff;
+  color: #b6863c;
   font-weight: 500;
   user-select: none;
 }
 
 .gender-btn:hover {
   border-color: #b6863c;
-  color: #fff;
 }
 
 .gender-buttons input[type="radio"]:checked + .gender-btn {
@@ -148,14 +203,14 @@ section#form-revendedora {
 /* ======== ERROS ======== */
 .error-message {
   display: none;
-  color: #ff5e5e;
+  color: #c90d1c;
   font-size: 13px;
   margin-top: 6px;
 }
 
 .error-message.visible {
   display: block;
-  color: #ff5e5e;
+  color: #c90d1c;
   font-size: 13px;
   margin-top: 6px;
   animation: fadeIn 0.3s ease;
@@ -190,7 +245,6 @@ section#form-revendedora {
   background: transparent;
   color: #b6863c;
   border: 2px solid #b6863c;
-    
 }
 
 #prevBtn.visible {
@@ -199,7 +253,7 @@ section#form-revendedora {
 
 #nextBtn {
   background: #b6863c;
-  color: #000;
+  color: #ffffff;
   font-weight: 600;
 }
 
@@ -209,8 +263,6 @@ section#form-revendedora {
   gap: 15px;
   margin-top: 30px;
 }
-
-
 
 /* ======== ANIMAÇÃO DE ERRO ======== */
 @keyframes fadeIn {

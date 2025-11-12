@@ -37,226 +37,250 @@
   <body>
 
     <!-- Formulário Centralizado OuroArt -->
-<section id="form-revendedora">
-  <div class="card-form-ouroart">
-    <h3>Comece a Lucrar com Semijoias</h3>
-    <p>Preencha o formulário abaixo e faça parte da nossa rede exclusiva de revendedoras.</p>
+    <section id="form-revendedora">
+      <div class="card-form-ouroart">
+        <h3>Comece a Lucrar com Semijoias</h3>
+        <p>Preencha o formulário abaixo e faça parte da nossa rede exclusiva de revendedoras.</p>
 
-    <!-- progress + title -->
-    <div class="step-indicator">
-      <div id="stepTitle">Etapa 1 de 3 — Informações Pessoais</div>
-    </div>
-
-    <!-- form -->
-    <form id="multiStepForm" action="#" class="appointment-form" novalidate>
-      <!-- ====== STEP 1 ====== -->
-      <div class="step" data-step="1">
-        <div class="form-group input-group-ouroart">
-          <label class="input-label">Como devemos te chamar?</label>
-          <div class="input-wrapper">
-            <i class="fa fa-user"></i>
-            <input id="Nome" name="Nome" type="text" class="input-ouroart" placeholder="Seu nome completo" required>
-          </div>
-          <div class="error-message" data-for="Nome">Por favor, informe seu nome completo</div>
+        <!-- progress + title -->
+        <div class="step-indicator">
+          <div id="stepTitle">Etapa 1 de 3 — Informações Pessoais</div>
         </div>
 
-        <div class="form-group">
-          <label class="input-label">Qual seu gênero?</label>
-          <div class="gender-buttons">
-            <input type="radio" id="sexo-m" name="Sexo" value="Masculino" required>
-            <label for="sexo-m" class="gender-btn">Masculino</label>
-            <input type="radio" id="sexo-f" name="Sexo" value="Feminino">
-            <label for="sexo-f" class="gender-btn">Feminino</label>
-          </div>
-          <div class="error-message" data-for="Sexo">Por favor, selecione seu gênero</div>
-        </div>
+        <!-- form -->
+        <form id="multiStepForm" class="appointment-form" novalidate>
 
-        <div class="form-group input-group-ouroart">
-          <label class="input-label">Qual seu melhor e-mail?</label>
-          <div class="input-wrapper">
-            <i class="fa fa-envelope"></i>
-            <input id="Email" name="Email" type="email" class="input-ouroart" placeholder="nome@exemplo.com" required>
-          </div>
-          <div class="error-message" data-for="Email">Por favor, informe um e-mail válido</div>
-        </div>
+          <!-- ====== STEP 1 ====== -->
+          <div class="step" data-step="1">
+            <div class="form-group input-group-ouroart">
+              <label class="input-label">Como devemos te chamar?</label>
+              <div class="input-wrapper">
+                <i class="fa fa-user"></i>
+                <input id="Nome" name="Nome" type="text" class="input-ouroart" placeholder="Seu nome completo" required>
+              </div>
+              <div class="error-message" data-for="Nome">Por favor, informe seu nome completo</div>
+            </div>
 
-        <div class="form-group input-group-ouroart">
-          <label class="input-label">WhatsApp para contato</label>
-          <div class="input-wrapper">
-            <i class="fab fa-whatsapp"></i>
-            <input id="WhatsApp" name="WhatsApp" type="text" class="input-ouroart" placeholder="(00) 00000-0000" required>
-          </div>
-          <div class="error-message" data-for="WhatsApp">Por favor, informe um número de WhatsApp válido</div>
-        </div>
+            <div class="form-group">
+              <label class="input-label">Qual seu gênero?</label>
+              <div class="gender-buttons">
+                <input type="radio" id="sexo-m" name="Sexo" value="Masculino" required>
+                <label for="sexo-m" class="gender-btn">Masculino</label>
+                <input type="radio" id="sexo-f" name="Sexo" value="Feminino">
+                <label for="sexo-f" class="gender-btn">Feminino</label>
+              </div>
+              <div class="error-message" data-for="Sexo">Por favor, selecione seu gênero</div>
+            </div>
 
-        <div class="form-group input-group-ouroart">
-          <label class="input-label">CPF</label>
-          <div class="input-wrapper">
-            <i class="fas fa-id-card"></i>
-            <input id="CPF" name="CPF" type="text" class="input-ouroart" placeholder="000.000.000-00" required>
-          </div>
-          <div class="error-message" data-for="CPF">Por favor, informe um CPF válido</div>
-        </div>
+            <div class="form-group input-group-ouroart">
+              <label class="input-label">Qual seu melhor e-mail?</label>
+              <div class="input-wrapper">
+                <i class="fa fa-envelope"></i>
+                <input id="Email" name="Email" type="email" class="input-ouroart" placeholder="nome@exemplo.com" required>
+              </div>
+              <p class="msg-info-input">Enviaremos dicas exclusivas e novidades por aqui</p>
+              <div class="error-message" data-for="Email">Por favor, informe um e-mail válido</div>
+            </div>
 
-        <div class="form-group input-group-ouroart">
-          <label class="input-label">Data de Nascimento</label>
-          <div class="input-wrapper">
-            <i class="fas fa-calendar-alt"></i>
-            <input id="Nascimento" name="Nascimento" type="date" class="input-ouroart" required>
+            <div class="form-group input-group-ouroart">
+              <label class="input-label">WhatsApp para contato</label>
+              <div class="input-wrapper">
+                <i class="fab fa-whatsapp"></i>
+                <input id="WhatsApp" name="WhatsApp" type="text" class="input-ouroart" placeholder="(00) 00000-0000" required>
+              </div>
+              <p class="msg-info-input">Você receberá catálogos e promoções exclusivas</p>
+              <div class="error-message" data-for="WhatsApp">Por favor, informe um número de WhatsApp válido</div>
+            </div>
+
+            <div class="form-group input-group-ouroart">
+              <label class="input-label">CPF</label>
+              <div class="input-wrapper">
+                <i class="fas fa-id-card"></i>
+                <input id="CPF" name="CPF" type="text" class="input-ouroart" placeholder="000.000.000-00" required>
+              </div>
+              <div class="error-message" data-for="CPF">Por favor, informe um CPF válido</div>
+            </div>
+
+            <div class="form-group input-group-ouroart">
+              <label class="input-label">Data de Nascimento</label>
+              <div class="input-wrapper">
+                <i class="fas fa-calendar-alt"></i>
+                <input id="Nascimento" name="Nascimento" type="date" class="input-ouroart" required>
+              </div>
+              <div class="error-message" data-for="Nascimento">Por favor, informe sua data de nascimento</div>
+            </div>
           </div>
-          <div class="error-message" data-for="Nascimento">Por favor, informe sua data de nascimento</div>
-        </div>
+
+          <!-- ====== STEP 2 ====== -->
+          <div class="step" data-step="2" style="display:none;">
+            <div class="form-group input-group-ouroart">
+              <label class="input-label">Instagram (opcional)</label>
+              <div class="input-wrapper">
+                <i class="fab fa-instagram"></i>
+                <input id="Instagram" name="Instagram" type="text" class="input-ouroart" placeholder="@seuinstagram">
+              </div>
+              <p class="msg-info-input">Você receberá catálogos e promoções exclusivas</p>
+            </div>
+
+            <div class="form-group input-group-ouroart">
+              <label class="input-label">Facebook (opcional)</label>
+              <div class="input-wrapper">
+                <i class="fab fa-facebook"></i>
+                <input id="Facebook" name="Facebook" type="text" class="input-ouroart" placeholder="seufacebook">
+              </div>
+            </div>
+
+            <div class="form-group input-group-ouroart">
+              <label class="input-label">Qual sua situação financeira atual?</label>
+              <div class="input-wrapper">
+                <i class="fa fa-wallet"></i>
+                <select id="Restricao" name="Restricao" class="input-ouroart" required>
+                  <option value="">Selecione uma opção</option>
+                  <option value="Nome Limpo">Nome Limpo</option>
+                  <option value="Nome Sujo">Nome Sujo</option>
+                </select>
+              </div>
+              <p class="msg-info-input">Não se preocupe, isso não afeta sua aprovação!</p>
+              <div class="error-message" data-for="Restricao">Selecione uma opção</div>
+            </div>
+
+            <div class="form-group input-group-ouroart">
+              <label class="input-label">Caso tenha restrições, teria alguém para ser seu Avalista?</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-user-shield"></i>
+                <select id="Avalista" name="Avalista" class="input-ouroart" required>
+                  <option value="">Selecione uma opção</option>
+                  <option value="Avalista Amigo ou Vizinho">Amigo ou Vizinho</option>
+                  <option value="Avalista da Família">Familiar</option>
+                  <option value="Não tenho avalista">Não tenho ninguém</option>
+                </select>
+              </div>
+              <div class="error-message" data-for="Avalista">Selecione uma opção</div>
+            </div>
+
+            <div class="form-group input-group-ouroart">
+              <label class="input-label">Qual sua situação de trabalho atual?</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-briefcase"></i>
+                <select id="Trabalho" name="Trabalho" class="input-ouroart" required>
+                  <option value="">Selecione uma opção</option>
+                  <option value="Trabalho Registrado">Trabalho Registrado</option>
+                  <option value="Sou Autônoma">Sou Autônomo(a)</option>
+                  <option value="Sou do Lar">Sou do Lar</option>
+                  <option value="Não Trabalho">Não Trabalho</option>
+                </select>
+              </div>
+              <p class="msg-info-input">A revenda pode ser sua atividade principal ou complementar!</p>
+              <div class="error-message" data-for="Trabalho">Selecione uma opção</div>
+            </div>
+
+            <div class="form-group input-group-ouroart">
+              <label class="input-label">Qual sua faixa de renda mensal atual?</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-money-bill-wave"></i>
+                <select id="Renda" name="Renda" class="input-ouroart" required>
+                  <option value="">Selecione uma opção</option>
+                  <option value="Não tenho renda mensal">Não tenho renda mensal</option>
+                  <option value="Ganho até R$ 1.000">Até R$ 1.000</option>
+                  <option value="Ganho até R$ 1.001 a R$ 2.500">De R$ 1.001 a R$ 2.500</option>
+                  <option value="Ganho até R$ 2.501 a R$ 5.000">De R$ 2.501 a R$ 5.000</option>
+                </select>
+              </div>
+              <div class="error-message" data-for="Renda">Selecione uma opção</div>
+            </div>
+
+            <div class="form-group input-group-ouroart">
+              <label class="input-label">Onde você mora atualmente?</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-house"></i>
+                <select id="Residencia" name="Residencia" class="input-ouroart" required>
+                  <option value="">Selecione uma opção</option>
+                  <option value="Própria">Casa Própria</option>
+                  <option value="Alugada">Casa Alugada</option>
+                  <option value="Moro com os pais">Moro com os pais/familiares</option>
+                </select>
+              </div>
+              <p class="msg-info-input">Nossos revendedores aumentam sua renda em até R$ 2.000/mês!</p>
+              <div class="error-message" data-for="Residencia">Selecione uma opção</div>
+            </div>
+          </div>
+
+          <!-- ====== STEP 3 ====== -->
+          <div class="step" data-step="3" style="display:none;">
+            <div class="form-group input-group-ouroart">
+              <label class="input-label">CEP</label>
+              <div class="input-wrapper">
+                <i class="fa fa-map-pin"></i>
+                <input id="CEP" name="CEP" type="text" class="input-ouroart" placeholder="00000-000" required>
+              </div>
+              <p class="msg-info-input">Digite o CEP para preencher os dados automaticamente</p>
+              <div class="error-message" data-for="CEP">Informe um CEP válido</div>
+            </div>
+
+            <div class="form-group input-group-ouroart">
+              <label class="input-label">Estado</label>
+              <div class="input-wrapper">
+                <i class="fa fa-map"></i>
+                <input id="Estado" name="Estado" type="text" class="input-ouroart" required>
+              </div>
+              <div class="error-message" data-for="Estado">Informe o estado</div>
+            </div>
+
+            <div class="form-group input-group-ouroart">
+              <label class="input-label">Cidade</label>
+              <div class="input-wrapper">
+                <i class="fa fa-building"></i>
+                <input id="Cidade" name="Cidade" type="text" class="input-ouroart" required>
+              </div>
+              <div class="error-message" data-for="Cidade">Informe a cidade</div>
+            </div>
+
+            <div class="form-group input-group-ouroart">
+              <label class="input-label">Bairro</label>
+              <div class="input-wrapper">
+                <i class="fa fa-location-arrow"></i>
+                <input id="Bairro" name="Bairro" type="text" class="input-ouroart" required>
+              </div>
+              <div class="error-message" data-for="Bairro">Informe o bairro</div>
+            </div>
+
+            <div class="form-group input-group-ouroart">
+              <label class="input-label">Rua/Logradouro</label>
+              <div class="input-wrapper">
+                <i class="fa fa-road"></i>
+                <input id="Endereco" name="Endereco" type="text" class="input-ouroart" placeholder="Rua, Avenida, etc." required>
+              </div>
+              <div class="error-message" data-for="Endereco">Informe o endereço</div>
+            </div>
+
+            <div class="form-group input-group-ouroart">
+              <label class="input-label">Número</label>
+              <div class="input-wrapper">
+                <i class="fa fa-hashtag"></i>
+                <input id="Numero" name="Numero" type="text" class="input-ouroart" placeholder="Número da residência" required>
+              </div>
+              <div class="error-message" data-for="Numero">Informe o número</div>
+            </div>
+
+            <div class="form-group input-group-ouroart">
+              <label class="input-label">Complemento (opcional)</label>
+              <div class="input-wrapper">
+                <i class="fa fa-info"></i>
+                <input id="Complemento" name="Complemento" type="text" class="input-ouroart" placeholder="Apto, bloco, etc.">
+              </div>
+              <p class="msg-info-input">Para facilitar a entrega de seus materiais</p>
+            </div>
+          </div>
+
+          <!-- Navigation -->
+          <div class="steps-controls">
+            <button type="button" id="prevBtn" class="btn-ouroart">Voltar</button>
+            <button type="button" id="nextBtn" class="btn-ouroart">Continuar</button>
+          </div>
+        </form>
       </div>
-
-      <!-- ====== STEP 2 ====== -->
-      <div class="step" data-step="2" style="display:none;">
-        <div class="form-group input-group-ouroart">
-          <label class="input-label">Instagram (opcional)</label>
-          <div class="input-wrapper">
-            <i class="fab fa-instagram"></i>
-            <input id="Instagram" name="Instagram" type="text" class="input-ouroart" placeholder="@seuinstagram">
-          </div>
-        </div>
-
-        <div class="form-group input-group-ouroart">
-          <label class="input-label">Facebook (opcional)</label>
-          <div class="input-wrapper">
-            <i class="fab fa-facebook"></i>
-            <input id="Facebook" name="Facebook" type="text" class="input-ouroart" placeholder="seufacebook">
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label class="input-label">Qual sua situação financeira atual?</label>
-          <select id="Restricao" name="Restricao" class="input-ouroart" required>
-            <option value="">Selecione uma opção</option>
-            <option value="Nome Limpo">Nome Limpo</option>
-            <option value="Nome Sujo">Nome Sujo</option>
-          </select>
-          <div class="error-message" data-for="Restricao">Selecione uma opção</div>
-        </div>
-
-        <div class="form-group">
-          <label class="input-label">Caso tenha restrições, teria alguém para ser seu Avalista?</label>
-          <select id="Avalista" name="Avalista" class="input-ouroart" required>
-            <option value="">Selecione uma opção</option>
-            <option value="Avalista Amigo ou Vizinho">Amigo ou Vizinho</option>
-            <option value="Avalista da Família">Familiar</option>
-            <option value="Não tenho avalista">Não tenho ninguém</option>
-          </select>
-          <div class="error-message" data-for="Avalista">Selecione uma opção</div>
-        </div>
-
-        <div class="form-group">
-          <label class="input-label">Qual sua situação de trabalho atual?</label>
-          <select id="Trabalho" name="Trabalho" class="input-ouroart" required>
-            <option value="">Selecione uma opção</option>
-            <option value="Trabalho Registrado">Trabalho Registrado</option>
-            <option value="Sou Autônoma">Sou Autônomo(a)</option>
-            <option value="Sou do Lar">Sou do Lar</option>
-            <option value="Não Trabalho">Não Trabalho</option>
-          </select>
-          <div class="error-message" data-for="Trabalho">Selecione uma opção</div>
-        </div>
-
-        <div class="form-group">
-          <label class="input-label">Qual sua faixa de renda mensal atual?</label>
-          <select id="Renda" name="Renda" class="input-ouroart" required>
-            <option value="">Selecione uma opção</option>
-            <option value="Não tenho renda mensal">Não tenho renda mensal</option>
-            <option value="Ganho até R$ 1.000">Até R$ 1.000</option>
-            <option value="Ganho até R$ 1.001 a R$ 2.500">De R$ 1.001 a R$ 2.500</option>
-            <option value="Ganho até R$ 2.501 a R$ 5.000">De R$ 2.501 a R$ 5.000</option>
-          </select>
-          <div class="error-message" data-for="Renda">Selecione uma opção</div>
-        </div>
-
-        <div class="form-group">
-          <label class="input-label">Onde você mora atualmente?</label>
-          <select id="Residencia" name="Residencia" class="input-ouroart" required>
-            <option value="">Selecione uma opção</option>
-            <option value="Própria">Casa Própria</option>
-            <option value="Alugada">Casa Alugada</option>
-            <option value="Moro com os pais">Moro com os pais/familiares</option>
-          </select>
-          <div class="error-message" data-for="Residencia">Selecione uma opção</div>
-        </div>
-      </div>
-
-      <!-- ====== STEP 3 ====== -->
-      <div class="step" data-step="3" style="display:none;">
-        <div class="form-group input-group-ouroart">
-          <label class="input-label">CEP</label>
-          <div class="input-wrapper">
-            <i class="fa fa-map-pin"></i>
-            <input id="CEP" name="CEP" type="text" class="input-ouroart" placeholder="00000-000" required>
-          </div>
-          <div class="error-message" data-for="CEP">Informe um CEP válido</div>
-        </div>
-
-        <div class="form-group input-group-ouroart">
-          <label class="input-label">Estado</label>
-          <div class="input-wrapper">
-            <i class="fa fa-map"></i>
-            <input id="Estado" name="Estado" type="text" class="input-ouroart" required>
-          </div>
-          <div class="error-message" data-for="Estado">Informe o estado</div>
-        </div>
-
-        <div class="form-group input-group-ouroart">
-          <label class="input-label">Cidade</label>
-          <div class="input-wrapper">
-            <i class="fa fa-building"></i>
-            <input id="Cidade" name="Cidade" type="text" class="input-ouroart" required>
-          </div>
-          <div class="error-message" data-for="Cidade">Informe a cidade</div>
-        </div>
-
-        <div class="form-group input-group-ouroart">
-          <label class="input-label">Bairro</label>
-          <div class="input-wrapper">
-            <i class="fa fa-location-arrow"></i>
-            <input id="Bairro" name="Bairro" type="text" class="input-ouroart" required>
-          </div>
-          <div class="error-message" data-for="Bairro">Informe o bairro</div>
-        </div>
-
-        <div class="form-group input-group-ouroart">
-          <label class="input-label">Rua/Logradouro</label>
-          <div class="input-wrapper">
-            <i class="fa fa-road"></i>
-            <input id="Endereco" name="Endereco" type="text" class="input-ouroart" placeholder="Rua, Avenida, etc." required>
-          </div>
-          <div class="error-message" data-for="Endereco">Informe o endereço</div>
-        </div>
-
-        <div class="form-group input-group-ouroart">
-          <label class="input-label">Número</label>
-          <div class="input-wrapper">
-            <i class="fa fa-hashtag"></i>
-            <input id="Numero" name="Numero" type="text" class="input-ouroart" placeholder="Número da residência" required>
-          </div>
-          <div class="error-message" data-for="Numero">Informe o número</div>
-        </div>
-
-        <div class="form-group input-group-ouroart">
-          <label class="input-label">Complemento (opcional)</label>
-          <div class="input-wrapper">
-            <i class="fa fa-info"></i>
-            <input id="Complemento" name="Complemento" type="text" class="input-ouroart" placeholder="Apto, bloco, etc.">
-          </div>
-        </div>
-      </div>
-
-      <!-- Navigation -->
-      <div class="steps-controls">
-        <button type="button" id="prevBtn" class="btn-ouroart">Voltar</button>
-        <button type="button" id="nextBtn" class="btn-ouroart">Continuar</button>
-      </div>
-      </form>
-      </div>
-
-
+    </section>
+    <!-- Formulário Centralizado OuroArt -->
 
     <!-- botão de whatsapp -->
     <a href="https://wa.me/5519998591854?text=Ol%C3%A1%2C%20gostaria%20de%20ser%20uma%20revendedora." class="whatsapp-float" target="_blank" aria-label="Conversar no WhatsApp">
