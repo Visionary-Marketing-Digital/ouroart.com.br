@@ -149,10 +149,27 @@
     align-items: center;
     gap: 10px;
     text-decoration: none;
+    animation: pulse 1.5s infinite ease-in-out;
 }
 .whatsapp-button:hover {
-    background: #1ebe5d;
+    background: #23d369;
     color: white;
+    transform: scale(1.07);
+}
+/* Animação */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(37, 211, 102, 0.5);
+    }
+    50% {
+        transform: scale(1.07);
+        box-shadow: 0 0 18px rgba(37, 211, 102, 0.8);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(37, 211, 102, 0.5);
+    }
 }
 .whatsapp-cta {
     text-align: center;
