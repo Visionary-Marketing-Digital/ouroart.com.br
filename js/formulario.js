@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const prevBtn = document.getElementById('prevBtn');
   const nextBtn = document.getElementById('nextBtn');
   const form = document.getElementById('multiStepForm');
-  const progressBar = document.getElementById('progressBar'); // opcional, se tiver
+  const progressBar = document.getElementById('progressBar');
 
   let current = 0;
 
@@ -47,11 +47,13 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!cpf) return false;
     cpf = cpf.replace(/[^\d]+/g, '');
     if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false;
+
     let soma = 0;
     for (let i = 0; i < 9; i++) soma += parseInt(cpf.charAt(i)) * (10 - i);
     let resto = (soma * 10) % 11;
     if (resto === 10 || resto === 11) resto = 0;
     if (resto !== parseInt(cpf.charAt(9))) return false;
+
     soma = 0;
     for (let i = 0; i < 10; i++) soma += parseInt(cpf.charAt(i)) * (11 - i);
     resto = (soma * 10) % 11;
@@ -141,125 +143,94 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       const ok = validateStep(current);
       if (!ok) return;
-      // ======== Envio via Google Sheets ========
+
+      // ======== Envio final ========
       const scriptURL = 'https://script.google.com/macros/s/AKfycbwe1Sa3Vo5SID95SOnSnE0bM3cJaoNrqzQak3HboxbR73bEigr0S26EakO4IacO6Z_u/exec';
+      const formData = new FormData(form);
 
-      nextBtn.addEventListener('click', () => {
-        if (current < steps.length - 1) {
-          const ok = validateStep(current);
-          if (!ok) return;
-          current++;
-          showStep(current);
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        } else {
-          const ok = validateStep(current);
-          if (!ok) return;
+      nextBtn.disabled = true;
+      nextBtn.textContent = 'Enviando...';
 
-          const formData = new FormData(form);
-
-          nextBtn.disabled = true;
-          nextBtn.textContent = 'Enviando...';
-
-          fetch(scriptURL, { method: 'POST', body: formData })
-            .then(response => response.json())
-            .then(result => {
-              if (result.status === 'success') {
-                alert('✅ Formulário enviado com sucesso!');
-                form.reset();
-                current = 0;
-                showStep(current);
-              } else {
-                alert('❌ Erro ao enviar. Tente novamente.');
-              }
-            })
-            .catch(error => {
-              console.error('Erro no envio:', error);
-              alert('⚠️ Falha na conexão. Tente novamente mais tarde.');
-            })
-            .finally(() => {
-              nextBtn.disabled = false;
-              nextBtn.textContent = 'Continuar';
-            });
-        }
-      });
+      fetch(scriptURL, { method: 'POST', body: formData })
+        .then(response => response.json())
+        .then(result => {
+          if (result.status === 'success') {
+            window.location.href = "obrigado.html"; // 🔥 REDIRECIONA
+          } else {
+            alert('❌ Erro ao enviar. Tente novamente.');
+          }
+        })
+        .catch(error => {
+          console.error('Erro no envio:', error);
+          alert('⚠️ Falha na conexão. Tente novamente mais tarde.');
+        })
+        .finally(() => {
+          nextBtn.disabled = false;
+          nextBtn.textContent = 'Iniciar Minha Revenda';
+        });
     }
   });
 
   // ======== Busca CEP ========
-  document.addEventListener('DOMContentLoaded', () => {
-  const cepInput = document.getElementById('CEP');
-  if (cepInput) {
-    cepInput.addEventListener('blur', () => {
-      const cep = cepInput.value.replace(/\D/g, '');
-      if (cep.length === 8) buscaCEP(cep);
-    });
-  }
-});
+  async function buscaCEP(cep) {
+    try {
+      const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+      const data = await response.json();
 
-async function buscaCEP(cep) {
-  try {
-    const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
-    const data = await response.json();
+      if (!data.erro) {
+        const campos = {
+          Endereco: data.logradouro,
+          Bairro: data.bairro,
+          Cidade: data.localidade,
+          Estado: data.uf
+        };
 
-    if (!data.erro) {
-      const campos = {
-        Endereco: data.logradouro,
-        Bairro: data.bairro,
-        Cidade: data.localidade,
-        Estado: data.uf
-      };
-
-      for (const [id, valor] of Object.entries(campos)) {
-        const el = document.getElementById(id);
-        if (el) {
-          el.value = valor || '';
-          // deixa texto preto e borda verde
-          el.style.color = '#000';
-          el.style.borderColor = '#005c26';
-          el.classList.add('valid');
-          const icon = el.parentElement.querySelector('i');
-          if (icon) icon.style.color = '#005c26';
+        for (const [id, valor] of Object.entries(campos)) {
+          const el = document.getElementById(id);
+          if (el) {
+            el.value = valor || '';
+            el.style.color = '#000';
+            el.style.borderColor = '#005c26';
+            el.classList.add('valid');
+            const icon = el.parentElement.querySelector('i');
+            if (icon) icon.style.color = '#005c26';
+          }
         }
+
+        const cepEl = document.getElementById('CEP');
+        cepEl.style.borderColor = '#005c26';
+        cepEl.classList.add('valid');
+        const iconCep = cepEl.parentElement.querySelector('i');
+        if (iconCep) iconCep.style.color = '#005c26';
       }
-
-      // deixa o próprio CEP verde
-      const cepEl = document.getElementById('CEP');
-      cepEl.style.borderColor = '#005c26';
-      cepEl.classList.add('valid');
-      const iconCep = cepEl.parentElement.querySelector('i');
-      if (iconCep) iconCep.style.color = '#005c26';
+    } catch (error) {
+      console.error('Erro ao buscar CEP:', error);
     }
-  } catch (error) {
-    console.error('Erro ao buscar CEP:', error);
   }
-}
-
 
   const cepEl = document.getElementById('CEP');
   if (cepEl) {
     cepEl.addEventListener('blur', (e) => {
-      buscaCEP(e.target.value);
+      const cep = e.target.value.replace(/\D/g, '');
+      if (cep.length === 8) buscaCEP(cep);
       validateField(cepEl);
     });
   }
 
-  // Aplica cores apenas após interação
+  // Aplica cores após interação
   document.querySelectorAll('.input-ouroart').forEach(input => {
     input.addEventListener('blur', () => {
-      const icon = input.parentElement.querySelector('i'); // pega o ícone dentro do mesmo container
+      const icon = input.parentElement.querySelector('i');
       const value = input.value.trim();
 
-      // Se o campo foi tocado e está vazio
       if (value === '') {
         input.classList.remove('valid');
         input.classList.add('invalid');
-        if (icon) icon.style.color = '#c90d1c'; // vermelho
-      }
-      // Se o campo está preenchido corretamente
-      else {
+        if (icon) icon.style.color = '#c90d1c';
+      } else {
         input.classList.remove('invalid');
         input.classList.add('valid');
-        if (icon) icon.style.color = '#005c26ff'; // verde
+        if (icon) icon.style.color = '#005c26ff';
       }
     });
   });
