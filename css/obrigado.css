@@ -1,0 +1,215 @@
+:root {
+    --primary: #af864c;
+    --accent: #ff9800;
+    --primary-dark: #c49b63;
+    --whatsapp: #17b150;
+    --error: #dc2626;
+    --dark: #1f2937;
+    --gray: #6b7280;
+    --gray-light: #e5e7eb;
+}
+
+/* HERO */
+.hero-section {
+    color: white;
+    padding: 60px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+}
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.success-icon {
+    font-size: 80px;
+    margin-bottom: 20px;
+    animation: bounce 2s infinite;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+.hero-title {
+    font-family:  "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.hero-subtitle {
+    font-size: 20px;
+    opacity: 0.95;
+    margin-bottom: 30px;
+}
+.status-badge {
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.status-badge i {
+    color: #4ade80;
+    margin-right: 8px;
+}
+
+/* GENERAL SECTIONS */
+.container {
+    max-width: 900px;
+    margin: -30px auto 40px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    z-index: 10;
+}
+
+@media (max-width: 767px) {
+    .container {
+        margin: -20px auto 30px; /* removido margin lateral manual */
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.urgent-action-card,
+.benefits-card,
+.faq-section {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+.urgent-action-card {
+    border: 3px solid var(--whatsapp);
+    overflow: hidden;
+}
+.timer-warning {
+    background: #fee2e2;
+    border-left: 4px solid var(--error);
+    padding: 15px;
+    margin-bottom: 25px;
+    border-radius: 6px;
+}
+
+/* Steps */
+.step-item {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+.step-number {
+    font-size: 28px;
+    font-weight: bold;
+    background: var(--primary);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.copy-message {
+    cursor: pointer;
+    padding: 15px;
+    background: #f9fafb;
+    border-radius: 8px;
+    border: 1px solid var(--gray-light);
+    margin-top: 10px;
+}
+.copy-button {
+    display: inline-block;
+    margin-top: 10px;
+    background: var(--primary);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/* WhatsApp Button */
+.whatsapp-button {
+    background: var(--whatsapp);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+.whatsapp-button:hover {
+    background: #1ebe5d;
+    color: white;
+}
+.whatsapp-cta {
+    text-align: center;
+    margin-top: 25px;
+}
+
+/* Benefits */
+.benefits-title {
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 20px;
+    text-align: center;
+}
+.benefit-check {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #fffef5;
+    border-radius: 8px;
+    gap: 15px;
+}
+.benefit-check i {
+    font-size: 22px;
+    color: var(--primary);
+}
+.benefit-highlight {
+    font-weight: bold;
+}
+
+/* FAQ */
+.faq-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 20px;
+    text-align: center;
+}
+.faq-item {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.faq-question{
+    font-weight: 500;
+}
+
+.faq-answer{
+    font-weight: 400;
+}
+
+a:hover, a:active, a:focus
+ {
+    color: #ffffff;
+    outline: none !important;
+    text-decoration: none !important;
+}
