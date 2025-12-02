@@ -8780,9 +8780,13 @@ textarea.form-control {
 
 .footer .footer-about a {
   color: black;
-  font-size: 24px;
+  font-size: 14px;
   font-weight: 600;
   font-family: var(--heading-font);
+}
+
+footer .footer-about a:hover {
+  color: white;
 }
 
 .footer .footer-contact p {

@@ -89,7 +89,7 @@ section#form-revendedora {
   margin-bottom: 6px;
   color: #2b2a2a;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 13px;
 }
 
 .input-ouroart {
@@ -274,4 +274,19 @@ input:-webkit-autofill {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.special-offer {
+    background: linear-gradient(135deg, #ffeecc 0%, #fff9e6 100%);
+    box-shadow: 0 0 8px rgba(182, 134, 60, 0.18);
+    border-left: 4px solid #b6863c;
+    padding: 10px;
+    border-radius: 6px;
+    margin: 25px 0 20px;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
 }
