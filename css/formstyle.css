@@ -65,10 +65,10 @@ section#form-revendedora {
 
 .input-wrapper .input-ouroart {
   width: 100%;
-  background: #ececec;
-  border: 1px solid #bebebe;
+  background: #ffffff;
+  border: 1px solid #cacaca;
   border-radius: 8px;
-  padding: 12px 15px 12px 45px; /* espaço pro ícone */
+  padding: 8px 12px 8px 38px; /* espaço pro ícone */
   color: #fff;
   font-size: 15px;
   transition: 0.3s;
@@ -99,7 +99,7 @@ section#form-revendedora {
   border-radius: 8px;
   padding: 12px 15px 12px 45px; /* espaço pro ícone */
   color: #000000;
-  font-size: 15px;
+  font-size: 14px !important;
   transition: 0.3s;
   line-height: normal;
 }
@@ -159,8 +159,8 @@ input[type="date"]:valid {
 /* Corrige cor do texto quando o valor é inserido automaticamente (ex: via JS ou autocomplete) */
 input,
 input:-webkit-autofill {
-  -webkit-text-fill-color: #000 !important; /* texto preto */
-  color: #000 !important; /* fallback */
+  -webkit-text-fill-color: #5c5c5c !important; /* texto preto */
+  color: #5c5c5c !important; /* fallback */
   transition: background-color 5000s ease-in-out 0s; /* evita fundo amarelo no autofill */
 }
 
@@ -178,7 +178,7 @@ input:-webkit-autofill {
 .gender-btn {
   flex: 1;
   text-align: center;
-  padding: 12px 0;
+  padding: 10px 0;
   border: 2px solid #b6863c;
   border-radius: 10px;
   cursor: pointer;
