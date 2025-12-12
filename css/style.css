@@ -9635,11 +9635,3 @@ cursor: pointer;
   text-decoration: none; /* opcional, remove sublinhado */
   color: inherit;        /* opcional, mantém a cor do texto */
 }
-
-/* Correção real do bloqueio de scroll do Owl Carousel */
-.owl-carousel .owl-stage-outer {
-  touch-action: pan-y !important;
-  -ms-touch-action: pan-y !important;
-  overflow: visible !important;
-  pointer-events: auto !important;
-}
