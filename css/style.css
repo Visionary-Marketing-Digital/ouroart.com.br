@@ -9635,3 +9635,8 @@ cursor: pointer;
   text-decoration: none; /* opcional, remove sublinhado */
   color: inherit;        /* opcional, mantém a cor do texto */
 }
+
+/* Correção do bloqueio de scroll no header */
+.owl-carousel.home-slider .slider-item .overlay {
+  pointer-events: none !important;
+}
