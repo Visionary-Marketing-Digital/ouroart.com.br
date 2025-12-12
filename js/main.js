@@ -43,15 +43,7 @@
 	loader();
 
 	// Scrollax
-    $.Scrollax();
-
-    // Remove a interferência do Scrollax dentro dos carrosséis
-	$('.owl-carousel *').removeAttr('data-scrollax');
-
-    // 🔥 Permite o scroll vertical mesmo dentro do carrossel
-	$(document).on('mousewheel DOMMouseScroll touchmove', '.owl-carousel', function(e) {
-		e.stopPropagation(); // Não deixa o OWL travar o scroll
-	});
+   $.Scrollax();
 
 	var carousel = function() {
 		$('.home-slider').owlCarousel({
@@ -64,9 +56,10 @@
 	    autoplayHoverPause: false,
 	    items: 1,
 
-		touchDrag: true,
-		mouseDrag: true,
-		pullDrag: true,
+		// 🔥 LIBERA O SCROLL VERTICAL
+		touchDrag: false,
+		mouseDrag: false,
+		pullDrag: false,
 
 	    navText : ["<span class='ion-md-arrow-back'></span>","<span class='ion-chevron-right'></span>"],
 	    responsive:{
