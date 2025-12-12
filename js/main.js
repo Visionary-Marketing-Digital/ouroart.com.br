@@ -43,7 +43,10 @@
 	loader();
 
 	// Scrollax
-   $.Scrollax();
+    $.Scrollax();
+
+    // Remove a interferência do Scrollax dentro dos carrosséis
+	$('.owl-carousel *').removeAttr('data-scrollax');
 
     // 🔥 Permite o scroll vertical mesmo dentro do carrossel
 	$(document).on('mousewheel DOMMouseScroll touchmove', '.owl-carousel', function(e) {
